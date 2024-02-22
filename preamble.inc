@@ -107,7 +107,7 @@
 % checklist env sets up a table and format the items.
 % in case a item has steps use the \step{asdf}
 % command.
-\newenvironment{checklist}[1]{%
+\newenvironment{checklist}[2][black!90]{%
   % Base element for checklist, representing steps. 
   \renewcommand{\item}[2]{%
     ##1\dotfill\makebox{\uppercase{##2}}\\
@@ -129,6 +129,6 @@
   }
 
   \begin{tabular}{p{0.9\linewidth}}
-       \multicolumn{1}{c}{\cellcolor{black!90}\color{white}\textbf{\uppercase{#1}}}\\
+       \multicolumn{1}{c}{\cellcolor{#1}\color{white}\textbf{\uppercase{#2}}}\\
        \vspace{0.25em}
 }{\end{tabular}\vspace{0.5em}}
