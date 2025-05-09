@@ -1,4 +1,4 @@
-# Set 
+# Set
 SOURCE_DIR := source
 BUILD_DIR := build
 OUTPUT_DIR := pdf
@@ -18,7 +18,7 @@ compile: $(SOURCES)
 		xelatex -output-dir=$(BUILD_DIR) $$i; \
 		xelatex -output-dir=$(BUILD_DIR) $$i; \
     done
-	
+
 publish:
 	mv $(BUILD_DIR)/*.pdf $(OUTPUT_DIR)
 

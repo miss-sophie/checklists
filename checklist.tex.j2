@@ -1,0 +1,46 @@
+\documentclass[{{papersize}}{{',legal_disclaimer' if legal_disclaimer}}]{checklist}
+
+\begin{document}
+
+{% if tailNumber %}
+\checklistName{ {{ checklist_name | e }} }
+{% endif %}
+
+{% if description %}
+\checklistDescription{ {{ description | e }} }
+{% endif %}
+
+\maketitle
+
+{% for category in categories %}
+{% if category.name == "Normal" %}
+\normalchapter
+{% elif category.name == "Abnormal" %}
+\abnormalchapter
+{% elif category.name == "Emergency" %}
+\emergencychapter
+{% endif %}
+
+{% for group in category.groups %}
+{% if use_sections %}
+\section{ {{ group.name | e }} }
+{% endif %}
+
+{% for checklist in group.checklists %}
+\begin{checklist}{ {{ checklist.name | e }} }
+{% for item in checklist["items"] %}
+{% if item.type == 'check' %}
+\checkitem{ {{ item.text | e }} }{ {{ item.detail | e }} }
+{% if item.note %}
+\notes{ {{ item.note | e }} }
+{% endif %}
+{% elif item.type == 'detail' %}
+\detailitem{ {{ item.text | e }} }{ {{ (item.detail ~ ' ' ~ item.note) | e if item.detail or item.note else '' }} }
+{% endif %}
+{% endfor %}
+\end{checklist}
+{% endfor %}
+{% endfor %}
+{% endfor %}
+
+\end{document}
