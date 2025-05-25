@@ -5,7 +5,8 @@
 
 
 This is a simple set of LaTex files to produce nice PDF formatted checklists.
-You need to have a LaTex environment set up and `xelatex` available.
+
+You need to have a LaTex environment set up with `xelatex` and `ttfutils` available.
 
 ## Creating a checklist
 
