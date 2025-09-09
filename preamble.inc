@@ -5,7 +5,6 @@
 % Allowed values for "papersize": [4,5,6]
 % ---------------------------------------------------------------
 \if\papersize4
-  \documentclass[12pt]{article}
   \usepackage[a4paper, twocolumn]{geometry}
   \geometry{
     total={192mm,280mm},
@@ -19,7 +18,6 @@
   }
 \fi
 \if\papersize5
-  \documentclass[10pt]{article}
   \usepackage[a5paper, twocolumn]{geometry}
   \geometry{
     total={130mm,190mm},
@@ -33,7 +31,6 @@
   }
 \fi
 \if\papersize6
-  \documentclass[10pt]{article}
   \usepackage[a6paper, twocolumn]{geometry}
   \geometry{
     total={95.5mm,130mm},
@@ -47,7 +44,6 @@
     }
 \fi
 \if\papersize7
-  \documentclass[10pt]{article}
   \usepackage[a6paper]{geometry}
   \geometry{
     total={80.5mm,130mm},
