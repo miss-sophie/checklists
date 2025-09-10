@@ -1,0 +1,74 @@
+[document]
+    name   = "d-edfy_checks_a6"
+    preamble = "preamble.inc"
+    title    = "Checklist D-EDFY"
+    papersize   = "6"
+
+[checklists.before_start]
+    title = "Before Start"
+    items = [
+        {type = "item", title = "Cowling Flaps", value = "closed"},
+        {type = "item", title = "Parking Break", value = "set"},
+        {type = "item", title = "Avionik", value = "off", hints = ["Radio, XPDR, EDM, Flarm"]},
+        {type = "item", title = "Main Switch", value = "on"},
+        {type = "item", title = "Beacon", value = "on"},
+        {type = "item", title = "Propeller", value = "2500 rpm"},
+        {type = "item", title = "Mixture", value = "full rich"},
+        {type = "item", title = "Prop Area", value = "clear"},
+    ]
+
+[checklists.after_start]
+    title = "After Start"
+    items = [
+        {type = "item", title = "Oil Pressure", value = "green"},
+        {type = "item", title = "Ampéremeter", value = "loading"},
+        {type = "item", title = "Avionik", value = "on", hints = ["Radio, XPDR, EDM, Flarm"]},
+    ]
+
+[checklists.before_takeoff]
+    title = "Before Takeoff"
+    items = [
+        {type = "item", title = "Landing Lights", value = "on"},
+        {type = "item", title = "Flaps", value = "set"},
+        {type = "item", title = "Cowl Flaps", value = "open"},
+        {type = "item", title = "Trim", value = "Takeoff"},
+        {type = "item", title = "Fuel Selector", value = "both"},
+        {type = "item", title = "Propeller", value = "2500 rpm"},
+        {type = "item", title = "Mixture", value = "full rich"},
+    ]
+
+[checklists.after_takeoff]
+    title = "After Takeoff"
+    items = [
+        {type = "item", title = "Landing Lights", value = "off"},
+        {type = "item", title = "Flaps", value = "retracted"},
+    ]
+
+[checklists.before_descent]
+    title = "Before Desent"
+    items = [
+        {type = "item", title = "Door", value = "closed"},
+        {type = "item", title = "Flaps", value = "retracted"},
+        {type = "item", title = "Cowl Flaps", value = "closed"},
+    ]
+
+[checklists.landing]
+    title = "Landing"
+    items = [
+        {type = "item", title = "Landing Lights", value = "on"},
+        {type = "item", title = "Flaps", value = "full / as rqrd."},
+        {type = "item", title = "Propeller", value = "max. rpm"},
+        {type = "item", title = "Mixture", value = "full rich"},
+    ]
+
+[checklists.shutdown]
+    title = "Shutdown"
+    items = [
+        {type = "item", title = "Avionik", value = "off", hints = ["Radio, XPDR, EDM, Flarm"]},
+        {type = "item", title = "Throttle", value = "idle"},
+        {type = "item", title = "Mixture", value = "cut-off"},
+        {type = "item", title = "Ignition Switch", value = "off"},
+        {type = "item", title = "Beacon", value = "off"},
+        {type = "item", title = "Main Switch", value = "off"},
+        {type = "item", title = "Cowling Flaps", value = "open"},
+    ]

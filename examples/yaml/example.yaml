@@ -1,0 +1,28 @@
+document:
+    name: example_yaml
+    preamble: preamble.inc
+    title: My Checklist (YAML)
+
+checklists:
+    foo:
+        title: Checklist 1
+        items:
+            - type: item
+              title: Item
+              value: Foo
+            - type: decision
+              title: Item
+              steps:
+                  - Foo
+                  - Bar
+    bar:
+        title: Checklist 2
+        items:
+            - type: item
+              title: Item
+              value: Foo
+            - type: decision
+              title: Item
+              steps:
+                  - Foo
+                  - Bar
