@@ -27,7 +27,7 @@ All fields and nesting levels are described in detail below.
 # ──────────────────────────────────────────────────────────────────────────────
 checklist_name:  string       # Title of the checklist set
 tailNumber:      string       # Aircraft registration (e.g. D-ERFH)
-description:     string       # Free-text description (can be empty)
+detail:     string       # Free-text description (can be empty)
 schemaVersion:   "1.0"        # Must be "1.0"
 categories:      [ … ]        # List of category objects
 # ──────────────────────────────────────────────────────────────────────────────
