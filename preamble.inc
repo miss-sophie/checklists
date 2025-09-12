@@ -46,6 +46,20 @@
     marginparsep=0mm,
     }
 \fi
+\if\papersize7
+  \documentclass[10pt]{article}
+  \usepackage[a6paper]{geometry}
+  \geometry{
+    total={80.5mm,130mm},
+    includehead,
+    headsep=2mm,
+    top=5mm,
+    left=15mm,
+    footskip=5mm,
+    marginparwidth=0mm,
+    marginparsep=0mm,
+    }
+\fi
 
 % ---------------------------------------------------------------
 % Global Layout Settings
@@ -69,6 +83,7 @@
 \usepackage{xcolor,colortbl}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{tcolorbox}
 
 % ---------------------------------------------------------------
 % Header and Footer Section
@@ -77,8 +92,9 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Set Header
-\renewcommand{\title}[1]{\fancyhead[C]{\textbf{\large{ #1 }}}}
+%Set Header
+\renewcommand{\title}[1]{\fancyhead[C]{\textbf{{ #1 }}}}
+
 
 % Set Footer
 \cfoot{\textcolor{lightgray}{\footnotesize\thepage\ of \pageref{LastPage}}}
@@ -89,32 +105,29 @@
 % Checklist Environment Definitions
 % ---------------------------------------------------------------
 
+\tcbsetforeverylayer{
+  colback=white,
+  colframe=black,
+  arc=0mm,
+  outer arc=0mm
+}
+
 % creates empty checkboxes to be used as the second
 % argument to \item on checklist
 \newcommand{\checkbox}{\makebox[3ex][r]{\Large{$\square$}}}
-
-% draws a box around a checklist group
-\NewEnviron{memoryitem}{\par
-\begin{tikzpicture}
-\node[rectangle,minimum width=0.95\linewidth] (m)
-  {\begin{minipage}{0.95\linewidth}
-    \begin{center}\vspace{0.5em}\BODY\end{center}
-   \end{minipage}};
-\draw[solid](m.south west) rectangle (m.north east);
-\end{tikzpicture}\vspace{0.75em}
-}
 
 % checklist env sets up a table and format the items.
 % in case a item has steps use the \step{asdf}
 % command.
 \newenvironment{checklist}[2][black!90]{%
+
   % Base element for checklist, representing steps. 
   \renewcommand{\item}[2]{%
-    ##1\dotfill\makebox{\uppercase{##2}}\\
+    ##1\dotfill\makebox{\uppercase{##2}}\par
   }
   % Indented paragraph, used for notes within a step
   \newcommand{\hint}[1]{%
-    \small\hspace*{0.8em}##1\\
+    {\small\hspace*{0.8em}##1}\par
   }
   
   % Creates a decision header
@@ -132,3 +145,4 @@
        \multicolumn{1}{c}{\cellcolor{#1}\color{white}\textbf{\uppercase{#2}}}\\
        \vspace{0.25em}
 }{\end{tabular}\vspace{0.5em}}
+

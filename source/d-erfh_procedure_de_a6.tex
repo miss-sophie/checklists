@@ -1,12 +1,19 @@
-\def\papersize{4}
+\def\papersize{7}
 \input{preamble.inc}
 
 \begin{document}
 
+\title{D-ERFH - Normalverfahren}
+\versionchecklist{1.2}
+\datechecklist{25.10.2025}
 
-\title{Klarliste D-ERFH}
-\versionchecklist{1.1}
-\datechecklist{10.06.2024}
+\begin{center}
+  \LARGE{D-ERFH}\par
+  \large{Normalverfahren}
+  \thispagestyle{empty}
+\end{center}
+
+\newpage
 
   \begin{checklist}{Vor dem Anlassen}
     \item{Vorflugkontrolle}{durchgeführt}
@@ -39,7 +46,8 @@
       \step{Choke: Aus}
     \item{Propellerbereich}{frei}
     \item{Zündschalter}{start}
-    \item{Öldruck}{grün \textit{max. 10 sec}}
+    \item{Öldruck}{grün}
+      \hint{Nach max. 10 Sekunden}
     \item{Drehzahl}{1000 RPM}
     \item{Warnleuchten}{aus}
   \end{checklist}
@@ -55,6 +63,7 @@
     \item{Bremsen}{PRÜFEN}
     \item{Fluginstrumente}{PRÜFEN}
   \end{checklist}
+
   \begin{checklist}{Abbremsen}
     \item{Triebwerksinstrumente}{GRÜN}
     \item{Parkbremse}{gesetzt}
@@ -91,12 +100,14 @@
     \item{Prakbremse}{lösen}
   \end{checklist}
 
+\newpage
+
   \begin{checklist}{Start}
     \item{Leistungshebel}{vollgas}
     \item{Drehzahl}{2400-2500 RPM}
     \item{Abheben}{51 kt}
     \item{Steigfluggeschwindigkeit}{65-70 kt}
-  
+
     \lowersection{Nach dem Start (500ft AGL)}
     \item{Kraftstoffpumpe}{aus}
     \item{Landescheinwerfer}{aus}
@@ -104,34 +115,7 @@
     \item{Leistung}{Steigflug}
   \end{checklist}
 
-\begin{table*}[t]
-  \centering
-  \begin{tabular}{@{}ll|ll|ll|ll|ll|ll@{}}
-    \multirow{2}{*}{Druckhöhe} &
-      \multirow{2}{*}{Stand. Temp.} &
-      \multicolumn{10}{l}{Motorleistung in \% max. Dauerleistung} \\ \cmidrule(l){3-12} 
-     &
-       &
-      \multicolumn{2}{c}{55\%} &
-      \multicolumn{2}{c}{65\%} &
-      \multicolumn{2}{c}{75\%} &
-      \multicolumn{2}{c}{85\%} &
-      \multicolumn{2}{c}{95\%} \\ \cmidrule(r){1-2}
-    ft    & $^{\circ}$C & MP   & RPM & MP   & RPM & MP   & RPM & MP   & RPM & MP   & RPM \\
-    0     & 15 & 24,7 & 19  & 25,3 & 21  & 26,3 & 22  & 27,7 & 23  & 28,0 & 24  \\\hline
-    2000  & 11 & 24,0 & 19  & 24,7 & 21  & 25,7 & 22  & 27,0 & 23  & 27,7 & 24  \\\hline
-    4000  & 7  & 23,3 & 19  & 24,0 & 21  & 25,0 & 22  & 25.3 & 24  & ---  & --- \\\hline
-    6000  & 3  & 23,0 & 19  & 23,7 & 21  & 23,7 & 23  & ---  & --- & ---  & --- \\\hline
-    8000  & -1 & 21,3 & 20  & 21,7 & 23  & 22,0 & 24  & ---  & --  & ---  & --- \\\hline
-    10000 & -5 & 20,0 & 21  & 20,3 & 24  & ---  & --- & ---  & --- & ---  & --- \\\hline
-    \multicolumn{2}{l}{Verbrauch l/h} &
-      \multicolumn{2}{c}{12,3} &
-      \multicolumn{2}{c}{14,5} &
-      \multicolumn{2}{c}{16,6} &
-      \multicolumn{2}{c}{19,3} &
-      \multicolumn{2}{c}{22,7}
-    \end{tabular}
-\end{table*}
+  \newpage
 
   \begin{checklist}{Anflug}
     \item{Sicherheitsgurte}{fest}
@@ -166,6 +150,8 @@
     \item{Hauptschalter / Gen}{aus}
   \end{checklist}
 
+\newpage
+
   \begin{checklist}{Geschwindigkeiten}
     \item{V$_{BG}$}{72 kt \textit{Klappen Start}}
     \item{V$_{X}$}{57 kt \textit{Klappen Start}}
@@ -173,16 +159,12 @@
     \item{V$_{X}$}{60 kt \textit{Klappen Reise}}
     \item{V$_{Y}$}{75 kt \textit{Klappen Reise}}
   \end{checklist}
+
   \begin{checklist}{Kraftstoff}
     \item{Tankinhalt}{76 Liter}
     \item{Ausfliegbar}{74 Liter}
     \item{Kraftstoff}{Mogas\&Avgas 100LL}
       \hint{Minimum ROZ 90 (EN228)}
   \end{checklist}
-
-  \begin{checklist}{Leistungsänderung}
-    \item{\textcolor{red}{Leistung $\Uparrow$}}{1. Drehzahl - 2. Ladedruck}
-    \item{\textcolor{blue}{Leistung $\Downarrow$}}{1. Ladedruck - 2. Drehzahl}
-\end{checklist}
 
 \end{document}

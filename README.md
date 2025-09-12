@@ -1,9 +1,12 @@
 # Checklists template in LaTeX
 
-![Example Checklist](example_checklist.png)
+![Example Checklist](example_checklist_1.jpg)
+![Example Checklist](example_checklist_2.jpg)
+
 
 This is a simple set of LaTex files to produce nice PDF formatted checklists.
-You need to have a LaTex environment set up and `xelatex` available.
+
+You need to have a LaTex environment set up with `xelatex` and `ttfutils` available.
 
 ## Creating a checklist
 
@@ -13,19 +16,25 @@ file has the extension `.tex`.
 Here's an example of a simple checklist:
 
 ```Tex
+\def\papersize{4}
 \input{preamble.inc}
 
 \begin{document}
 
-\title{Demo Checklist}
-\versionchecklist{1.0}
-\datechecklist{30.05.2022}
+\title{Example}
+\versionchecklist{1}
+\datechecklist{25.10.2024}
 
-\begin{checklist}{After Start}
-  \item{Oil Pressure}{green}
-  \item{Ampéremeter}{loading}
-  \item{Avionik}{on}
-    \hint{Funk, Transponder, EDM, Flarm}
+\begin{checklist}{Checklist Name}
+  \item{Checkitem 1}{result}
+  \item{Checkitem 2}{another result}
+    \hint{I am a hint!}
+  \decision{Decision: Cold}
+    \step{Step: 1}
+    \step{Step: Math is hard...}
+  \decision{Decision: Warm}
+    \step{Heater: Off}
+    \item{Checkitem 3}{result}
 \end{checklist}
 
 \end{document}
@@ -34,7 +43,6 @@ Here's an example of a simple checklist:
 ## Supported Variables and Elements
 | Type        | Name       | Usage                                                                        | Parameter            |
 |-------------|------------|------------------------------------------------------------------------------|----------------------|
-| Environment | memoryitem | Draws a box around the enclosed checklist group. Indication a memory item.   | none                 |
 | Environment | checklist  | Defines the base environment for all further commands.                       | checklist_name       |
 | Command     | item       | Base element for checklist, representing an individual step.                 | item_name, condition |
 | Command     | hint       | Indented paragraph, used for notes within a step.                            | hint_text            |
