@@ -114,13 +114,13 @@
 % Metadata
 % -----------------------------------------------------------------------------
 \newcommand\checklist@name{}
-\newcommand\checklist@description{}
+\newcommand\checklist@detail{}
 \newcommand\checklist@logo{}
 \newcommand\checklist@revision{}
 \newcommand\checklist@issuedate{}
 
 \newcommand{\checklistName}[1]{\gdef\checklist@name{#1}}
-\newcommand{\checklistDescription}[1]{\gdef\checklist@description{#1}}
+\newcommand{\checklistDetail}[1]{\gdef\checklist@detail{#1}}
 \newcommand{\checklistLogo}[1]{\gdef\checklist@logo{#1}}
 \newcommand{\checklistRevision}[1]{\gdef\checklist@revision{#1}}
 \newcommand{\checklistDateIssue}[1]{\gdef\checklist@issuedate{#1}}
@@ -134,10 +134,10 @@
     {\Huge\bfseries \checklist@name \par}
     \vspace{0.5cm}
 
-    \if\relax\detokenize\expandafter{\checklist@description}\relax
-    % No description specified, do nothing
+    \if\relax\detokenize\expandafter{\checklist@detail}\relax
+    % No detail specified, do nothing
     \else
-      {\Large\bfseries \checklist@description \par}
+      {\Large\bfseries \checklist@detail \par}
       \vspace{0.5cm}
     \fi
 

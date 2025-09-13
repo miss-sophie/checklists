@@ -71,7 +71,7 @@ The `payload` object follows a 4-level hierarchical schema:
 | --------------- | ------ | ----------------------------------- |
 | `name`          | string | Checklist set title                 |
 | `tailNumber`    | string | Aircraft tail number (registration) |
-| `description`   | string | (Optional) free-text description    |
+| `detail`   | string | (Optional) free-text description    |
 | `schemaVersion` | string | Must be `"1.0"`                     |
 
 #### 4.2. `objectId` (string)
