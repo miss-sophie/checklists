@@ -1,24 +1,85 @@
-# Checklists template in LaTeX
-Welcome to checklists — your toolkit for creating structured, print-ready checklists. Whether you’re documenting preflight procedures, emergency protocols, or the occasional intergalactic unicorn adventure, this class makes it easy to organize, style, and color your checklists professionally.
+# checklists — Aviation Checklist Management Toolkit
 
-### Key Features:
+Welcome to **checklists** — a modular toolkit for version-controlled, professional aviation checklists. Author, manage, and share checklists in **YAML**, render beautiful PDFs with LaTeX, and sync with ForeFlight using `.fmd` files. Author your checklist once—use everywhere.
 
-| Feature        | Description                                                                                                                                          |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **YAML**       | Define checklists in YAML and render them to LaTeX or FMD. Maintain editable, shareable checklist data.                                              |
-| **LaTeX**      | Create structured, print-ready checklists with `checklist.cls`. Supports multiple paper sizes, chapters, metadata, and customizable checklist boxes. |
-| **ForeFlight** | Import checklists from ForeFlight and convert them into YAML, or export YAML checklists to ForeFlight format.                                        |
+---
 
+## 🚀 Features
 
+| Feature         | Description                                                                                                                            |
+|-----------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| **YAML Source** | Author, edit, and version-control checklists in clear, human-editable YAML ([spec](docs/format-yaml.md))                               |
+| **LaTeX Output**| Render structured, print-ready PDFs using the `checklist.cls` class ([docs](docs/latex-class.md)) — use standalone or with this module |
+| **ForeFlight**  | Import/export ForeFlight `.fmd` files (encrypted, syncable format) ([spec](docs/format-fmd.md))                                        |
+| **CLI Utility** | Command-line interface for conversion, rendering, and automation ([see manpage](docs/cli-manpage.md))                                  |
 
-You need to have a LaTex environment set up with `xelatex` and `ttfutils` available.
+---
 
+## 📝 Usage Modes
 
+You can use this toolkit in two main ways:
 
-## 📖 TeX
-Please refer to the [docs](docs/checklist_cls.md) for all available options.
+### 1. Use the LaTeX Class Standalone
 
-### Example Document
+- Write your own TeX documents and utilize [`checklist.cls`](docs/latex-class.md) for professional, structured checklists.
+- All LaTeX features and styling are available without the Python module.
+
+### 2. Use the Python Module & CLI Workflow
+
+- Author your checklist in YAML.
+- Convert to LaTeX, ForeFlight `.fmd`, or back with the Python CLI utility.
+- Automate PDF generation and ForeFlight sync for cockpit and mobile use.
+
+---
+
+## 🛠️ How to Install
+
+**Requirements:**
+
+- Python 3.8+
+- [LaTeX environment](https://www.latex-project.org/get/) (for PDF rendering; `xelatex` recommended)
+- [ttfutils](https://pypi.org/project/ttfutils/) if using custom fonts
+
+**Install via pip (editable mode recommended for development):**
+```bash
+git clone https://github.com/miss-sophie/checklists.git
+cd checklists/checklist
+pip install -e .
+```
+
+Or install directly:
+```bash
+pip install .
+```
+
+**Install dependencies only:**
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## ⚡ Quickstart
+
+**Basic CLI usage:**
+```bash
+# Convert ForeFlight .fmd to YAML
+checklist import-fmd input.fmd output.yaml
+
+# Export YAML to ForeFlight .fmd
+checklist export-fmd input.yaml output.fmd
+
+# Render LaTeX .tex from YAML (then compile to PDF)
+checklist render-latex input.yaml output.tex --papersize a4double --use-sections
+xelatex -output-directory=build output.tex
+```
+
+See the [CLI manpage](docs/cli-manpage.md) for full CLI documentation, options, and examples.
+
+---
+
+## 📝 Example TeX Document
+
 ```latex
 \documentclass[a4double,legal_disclaimer]{checklist}
 
@@ -43,3 +104,12 @@ Please refer to the [docs](docs/checklist_cls.md) for all available options.
 ```
 
 ![Example Checklist](./sample/sample.jpg)
+
+---
+
+## 📚 Documentation
+
+- **CLI Reference / Manpage:** [docs/cli-manpage.md](docs/cli-manpage.md)
+- **YAML Format Spec:** [docs/yaml-format.md](docs/format-yaml.md)
+- **ForeFlight .fmd Spec:** [docs/foreflight-format.md](docs/format-fmd.md)
+- **LaTeX Class:** [docs/latex-class.md](docs/latex-class.md)

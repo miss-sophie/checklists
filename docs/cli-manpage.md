@@ -18,9 +18,33 @@ The **checklist** tool provides a workflow for maintaining aircraft checklists i
 
 Checklist data is authorable and version-controlled as YAML, then converted or rendered as needed:
 
-- **YAML**: Human-editable source format ([see YAML spec](docs/yaml-checklist-file-format-spec.md))
-- **ForeFlight .fmd**: Encrypted binary format for ForeFlight mobile import ([see FMD spec](docs/fmd-file-format-spec.md))
-- **LaTeX**: Structured, styled printable checklists ([see class documentation](docs/checklist_cls.md))
+- **YAML**: Human-editable source format ([see YAML spec](format-yaml.md))
+- **ForeFlight .fmd**: Encrypted binary format for ForeFlight mobile import ([see ForeFlight format](format-fmd.md))
+- **LaTeX**: Structured, styled printable checklists ([see LaTeX class documentation](latex-class.md))
+
+# HOW TO INSTALL
+
+**Requirements:**
+- Python 3.8 or newer
+- LaTeX environment (for PDF output; `xelatex` recommended)
+- [ttfutils](https://pypi.org/project/ttfutils/) for custom fonts (optional)
+
+**Install the module and CLI:**
+```bash
+git clone https://github.com/miss-sophie/checklists.git
+cd checklists/checklist
+pip install -e .
+```
+Or, for a one-time install:
+```bash
+pip install .
+```
+To install dependencies only:
+```bash
+pip install -r requirements.txt
+```
+
+The CLI script `checklist` will be available after install.
 
 # COMMANDS
 
@@ -69,19 +93,19 @@ checklist render-latex input.yaml output.tex [--papersize SIZE] [--use-sections]
 
 ## YAML Checklist Format
 
-- See [docs/yaml-checklist-file-format-spec.md](docs/yaml-checklist-file-format-spec.md)
+- See [yaml-format.md](yaml-format.md)
 - Top-level fields: `checklist_name`, `tailNumber`, `detail`, `schemaVersion`, `categories`
 - Hierarchy: categories → groups → checklists → items
 
 ## ForeFlight `.fmd` Format
 
-- See [docs/fmd-file-format-spec.md](docs/fmd-file-format-spec.md)
+- See [foreflight-format.md](foreflight-format.md)
 - Encrypted JSON, AES-128 CBC, PKCS#7 padding
 - Hierarchy matches YAML, with metadata and UUIDs for sync
 
 ## LaTeX Checklist Format
 
-- See [docs/checklist_cls.md](docs/checklist_cls.md)
+- See [latex-class.md](latex-class.md)
 - Uses `checklist.cls` class for chapters, environments, metadata, and styling
 
 # EXAMPLES
@@ -113,7 +137,7 @@ For all commands:
 
 For `render-latex`:
 
-- `--papersize SIZE` — Choose document size/layout (see [class docs](docs/checklist_cls.md))
+- `--papersize SIZE` — Choose document size/layout (see [latex-class.md](latex-class.md))
 - `--use-sections` — Enable section headers per subgroup
 - `--legal_disclaimer` — Add POH disclaimer box to title page
 
@@ -121,23 +145,11 @@ For `render-latex`:
 
 - Requires Python 3.8+
 - Dependencies: PyYAML, pycryptodome, jinja2
-- For LaTeX rendering: A working TeX/LaTeX environment (`xelatex` recommended)
+- For LaTeX rendering: A working TeX/LaTeX environment (`xelatex` recommended) with `ttfutils` being present.
 
 # SEE ALSO
 
-- [docs/yaml-checklist-file-format-spec.md](docs/yaml-checklist-file-format-spec.md) — YAML schema
-- [docs/fmd-file-format-spec.md](docs/fmd-file-format-spec.md) — ForeFlight file format details
-- [docs/checklist_cls.md](docs/checklist_cls.md) — LaTeX class documentation
-- [README.md](README.md) — Project overview and example
-
-# AUTHOR
-
-Written and maintained by **miss-sophie**
-
-# BUGS
-
-Report issues or feature requests via the [GitHub repository](https://github.com/miss-sophie/checklists).
-
-# COPYRIGHT
-
-MIT License. See repository for details.
+- [yaml-format.md](format-yaml.md) — YAML schema
+- [foreflight-format.md](format-fmd.md) — ForeFlight file format details
+- [latex-class.md](latex-class.md) — LaTeX class documentation
+- [README.md](../README.md) — Project overview and example
