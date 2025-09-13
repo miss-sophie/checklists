@@ -14,7 +14,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'checklist-suite=checklist_suite.cli:main'
+            'checklist=checklist.cli:main'
         ],
     },
     include_package_data=True,
