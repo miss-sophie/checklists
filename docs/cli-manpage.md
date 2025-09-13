@@ -93,13 +93,13 @@ checklist render-latex input.yaml output.tex [--papersize SIZE] [--use-sections]
 
 ## YAML Checklist Format
 
-- See [yaml-format.md](yaml-format.md)
+- See [yaml-format.md](format-yaml.md)
 - Top-level fields: `checklist_name`, `tailNumber`, `detail`, `schemaVersion`, `categories`
 - Hierarchy: categories → groups → checklists → items
 
 ## ForeFlight `.fmd` Format
 
-- See [foreflight-format.md](foreflight-format.md)
+- See [foreflight-format.md](format-fmd.md)
 - Encrypted JSON, AES-128 CBC, PKCS#7 padding
 - Hierarchy matches YAML, with metadata and UUIDs for sync
 
